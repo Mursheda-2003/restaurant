@@ -12,7 +12,7 @@ const Menu = () => {
         })
 
   return (
-    <div className="grid grid-col-1 md:grid-cols-2 gap-5">
+    <div className="grid grid-col-1 md:grid-cols-2 gap-5 max-w-7xl mx-auto">
       {
         menu.map(item=>
         <MenuItem

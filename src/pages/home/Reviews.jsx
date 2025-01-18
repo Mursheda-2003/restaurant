@@ -19,7 +19,7 @@ useEffect(()=>{
     })
 },[]);
   return (
-     <div>
+     <div className="max-w-7xl mx-auto">
           <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
       {
         reviews.map(review=>
