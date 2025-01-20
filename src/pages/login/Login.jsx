@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { CiFacebook } from "react-icons/ci";
 import { FaGoogle } from "react-icons/fa";
 import { RiGithubFill } from "react-icons/ri";
-
+import logo from "../../assets/logo.png"
 
 
 
@@ -20,8 +20,10 @@ const Login = () => {
 
   const onSubmit = (data) => console.log(data)
   return (
-    <div className="flex bg-img max-w-7xl mx-auto">
-      
+    <div className="bg-img">
+      <Link to="/">
+      <img className="w-16 ml-24" src={logo} alt="navlogo" /></Link>
+    <div className="flex  h-screen">
       <img src={login} alt="" />
       <form onSubmit={handleSubmit(onSubmit)}>
       {/* register your input into the hook by invoking the "register" function */}
@@ -53,6 +55,7 @@ const Login = () => {
     </form>
     
     
+    </div>
     </div>
     
   );
