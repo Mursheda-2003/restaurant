@@ -17,7 +17,7 @@ const MenuCategory = ({bannerImg, title, item}) => {
             ></MenuItem>
         )}
       </div>
-    </div>
+    </div> 
   );
 };
 

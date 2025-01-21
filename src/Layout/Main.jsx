@@ -4,7 +4,7 @@ import Footer from "../pages/shared/Footer";
 
 const Main = () => {
   const location = useLocation();
-  const hideNavbarAndFooter  = location.pathname.includes("login") || location.pathname.includes("signUp")
+  const hideNavbarAndFooter  = location.pathname.includes("login") || location.pathname.includes("signup")
   return (
     <div>
      { 

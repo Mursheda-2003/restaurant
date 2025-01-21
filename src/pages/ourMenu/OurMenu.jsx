@@ -20,7 +20,7 @@ const OurMenu = () => {
        title="Our Menu"
        bannerImg={coverImg}
       ></CoverImage>
-      <SectionHeading    
+      <SectionHeading     
       title="Don't Miss"
       heading="Today's Offer"
       ></SectionHeading>

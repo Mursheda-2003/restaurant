@@ -21,7 +21,7 @@ const CoverImage = ({title, bannerImg}) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </Parallax>
     );
 };
