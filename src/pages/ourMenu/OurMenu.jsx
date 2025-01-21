@@ -24,11 +24,30 @@ const OurMenu = () => {
       title="Don't Miss"
       heading="Today's Offer"
       ></SectionHeading>
+       <MenuCategory
+        item={popular}>     
+      </MenuCategory>
       <MenuCategory
       title="Desserts"
       bannerImg={bannerImg}
-      item={popular}
+      item={dessert}
       ></MenuCategory>
+      <MenuCategory
+      title="Pizza"
+      bannerImg={bannerImg}
+      item={pizza}
+      ></MenuCategory>
+      <MenuCategory
+      title="Salad"
+      bannerImg={bannerImg}
+      item={salad}
+      ></MenuCategory>
+      <MenuCategory
+      title="Soup"
+      bannerImg={bannerImg}
+      item={soup}
+      ></MenuCategory>
+
     </div>
   );
 };

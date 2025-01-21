@@ -9,9 +9,9 @@ const CoverImage = ({title, bannerImg}) => {
             bgImageAlt="banner image"
             strength={-200}
         >
-            <div>
+            <div style={{height: "700px"}}>
                 <div className="hero  min-h-screen">
-                    <div className="hero-content text-center">
+                    <div className="hero-content text-center bg-black bg-opacity-30 px-30 py-20">
                         <div className="max-w-md">
                             <h1 className="text-5xl font-bold text-white">{title}</h1>
                             <p className="py-6 text-white">
