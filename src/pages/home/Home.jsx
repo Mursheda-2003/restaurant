@@ -1,5 +1,6 @@
 import SectionHeading from "../../Components/SectionHeading";
 import Banner from "./Banner";
+import CallUs from "./CallUs";
 import Category from "./Category";
 import Menu from "./Menu";
 import Reviews from "./Reviews";
@@ -23,6 +24,7 @@ const Home = () => {
      heading="Testimonials">
      </SectionHeading>
      <Reviews></Reviews>
+     <CallUs></CallUs>
     </div>
   );
 };
