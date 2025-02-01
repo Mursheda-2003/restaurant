@@ -26,6 +26,9 @@ const Dashboard = () => {
         className="text-white" />
         <NavLink className="text-white text-2xl flex flex-col" to="">Log Out</NavLink>
         </li>
+        <li className="flex justify-center items-center gap-3">
+        <NavLink className="text-white text-2xl flex flex-col" to="toDo">ToDo</NavLink>
+        </li>
       </div>
       <div>
         <Outlet></Outlet>
