@@ -14,7 +14,6 @@ const Navbar = () => {
           <FaShoppingCart className="text-2xl"></FaShoppingCart>      
           <div className="badge badge-secondary absolute top-0 mt-2 ml-3">+0</div>
       </Link>
-
       <Link to="/dashboard">Dashboard</Link>
       <Link to="/login">Login</Link>
       
