@@ -34,7 +34,7 @@ const SignUP = () => {
         const user = res.user;
         if(user){
           Swal.fire({
-            position: "top-end",
+            position: "top-center",
             icon: "success",
             title: "Your work has been saved",
             showConfirmButton: false,

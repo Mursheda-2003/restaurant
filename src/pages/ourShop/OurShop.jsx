@@ -20,8 +20,8 @@ const OurShop = () => {
        title="ourShop"
        bannerImg={coverImg}
        ></CoverImage>
-        <Tabs className="mx-w-7xl max-auto text-center">
-    <TabList className="w-96 max-auto">
+        <Tabs className="max-w-7xl mx-auto">
+    <TabList className="w-96 mx-auto">
       <Tab>Salad</Tab>
       <Tab>Pizza</Tab>
       <Tab>Soup</Tab>

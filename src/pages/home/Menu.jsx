@@ -8,7 +8,7 @@ const Menu = () => {
     .then(data=> {
       const dessert = data.filter(food => food.category === "dessert")
         setMenu(dessert)
-        console.log(dessert)
+        // console.log(dessert)
         })
 
   return (

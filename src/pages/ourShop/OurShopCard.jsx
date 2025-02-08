@@ -1,9 +1,26 @@
+import { useContext } from "react";
 import PrimaryButton from "../../Components/PrimaryButton";
+import { AuthContext } from "../../providers/AuthProvider";
+import usePublic from "../../hooks/usePublic";
 
 const OurShopCard = ({food}) => {
+  const axiosPublic = usePublic()
+    const {user} = useContext(AuthContext)
+    // console.log(user?.email)
     const{name, price, image, recipe, _id} = food;
-    const handleSingleFood = (id) => {
-             console.log(id)
+    const handleSingleFood = () => {
+      const foodData = {
+        email:user?.email,
+        foodId: _id,
+        name,
+        image,
+        price
+      }
+      axiosPublic.post('/order', foodData)
+      .then(res=>{
+        console.log(res)
+      })
+             console.log(foodData)
     }
   return (
     <div className="card bg-base-100 w-96 shadow-xl">
@@ -14,11 +31,11 @@ const OurShopCard = ({food}) => {
       className="rounded-xl" />
   </figure>
   <div className="card-body items-center text-center">
-    <p className="bg-rose-400 p-2 rounded text-white absolute right-0 top-0 mt-10">${price}</p>
-    <h2 className="card-title">{name}</h2>
+    <p className="bg-rose-400 px-3 py-2 rounded text-white absolute right-8 top-10">${price}</p>
+    <h2 className="card-title relative">{name}</h2>
     <p>{recipe}</p>
     <div className="card-actions">
-      <button onClick={()=>handleSingleFood(_id)}>
+      <button onClick={handleSingleFood}>
       <PrimaryButton 
       title="Add to Card"></PrimaryButton>
       </button>

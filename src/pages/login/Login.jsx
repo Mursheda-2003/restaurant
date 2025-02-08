@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import login from "../../assets/others/authentication2.png"
 import { useForm } from "react-hook-form"
 import { CiFacebook } from "react-icons/ci";
@@ -8,9 +8,13 @@ import logo from "../../assets/logo.png";
 import toast, { Toaster } from 'react-hot-toast';
 import "./Login.css"
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
+  const navigate = useNavigate()
+  const {signIn} = useContext(AuthContext)
   const [disable, setDisable] = useState(true)
   const[value, setValue] = useState("");
   const {
@@ -24,7 +28,22 @@ const Login = () => {
     loadCaptchaEnginge(6);
   },[])
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = (data) =>{
+    signIn(data.email, data.password)
+    .then(res=>{
+      const user = res.user;
+      if(user){
+          Swal.fire({
+                      position: "top-center",
+                      icon: "success",
+                      title: "Your work has been saved",
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
+                    navigate('/')
+      }
+    })
+  }
   const handleValidateCaptcha = (event) =>{
     const user_captcha_value = event.target.value;
 
@@ -61,11 +80,11 @@ const Login = () => {
       <div>
         <label htmlFor="" className="text-xl">Password</label>
         <br />
-        <input className="focus:outline-none px-2 py-2 w-96" placeholder="password" {...register("pasword")} />
+        <input className="focus:outline-none px-2 py-2 w-96" placeholder="password" {...register("password")} />
       </div>
 
       <div>
-        <label htmlFor="" className="text-xl">Password
+        <label htmlFor="" className="text-xl">Captcha
         <LoadCanvasTemplate />
         </label>
         <br />
